@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YtiDown — YouTube · TikTok · Instagram Downloader</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">&#9660;</span>
+        <span class="logo-text">Yti<span class="logo-accent">Down</span></span>
+      </div>
+      <nav class="platforms">
+        <span class="platform-badge youtube" title="YouTube">YouTube</span>
+        <span class="platform-badge tiktok" title="TikTok">TikTok</span>
+        <span class="platform-badge instagram" title="Instagram">Instagram</span>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <main class="main">
+      <section class="hero">
+        <h1 class="hero-title">Download Video &amp; Audio</h1>
+        <p class="hero-subtitle">Paste a link from YouTube, TikTok, or Instagram and get your file in seconds.</p>
+      </section>
+
+      <!-- Input card -->
+      <section class="card" id="downloadCard">
+        <div class="input-group">
+          <input
+            type="text"
+            id="linkInput"
+            class="link-input"
+            placeholder="Paste your link here..."
+            autocomplete="off"
+          />
+          <button id="fetchBtn" class="fetch-btn" type="button">Enter Link</button>
+        </div>
+        <p class="hint" id="hintText">Supported: YouTube, TikTok, Instagram</p>
+      </section>
+
+      <!-- Loading -->
+      <section class="loading hidden" id="loadingSection">
+        <div class="spinner"></div>
+        <p class="loading-text">Fetching media info...</p>
+      </section>
+
+      <!-- Result -->
+      <section class="result hidden" id="resultSection">
+        <div class="result-card">
+          <div class="result-thumb">
+            <img id="resultThumbnail" src="" alt="thumbnail" />
+          </div>
+          <div class="result-info">
+            <h3 id="resultTitle" class="result-title">Title</h3>
+            <p id="resultAuthor" class="result-author">Author</p>
+            <p id="resultDuration" class="result-duration"></p>
+          </div>
+        </div>
+
+        <div class="format-section">
+          <h4 class="format-label">Choose format</h4>
+          <div class="format-buttons">
+            <button class="format-btn video-mp4" data-format="mp4" data-quality="720">
+              <span class="format-icon">&#127909;</span>
+              <span class="format-name">MP4 720p</span>
+            </button>
+            <button class="format-btn video-mp4" data-format="mp4" data-quality="1080">
+              <span class="format-icon">&#127909;</span>
+              <span class="format-name">MP4 1080p</span>
+            </button>
+            <button class="format-btn audio-mp3" data-format="mp3" data-quality="0">
+              <span class="format-icon">&#127925;</span>
+              <span class="format-name">MP3 Audio</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="download-progress hidden" id="progressSection">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="progress-text" id="progressText">Preparing your download...</p>
+        </div>
+
+        <button class="reset-btn" id="resetBtn">Download another link</button>
+      </section>
+
+      <!-- Error -->
+      <section class="error-card hidden" id="errorSection">
+        <p class="error-icon">&#9888;</p>
+        <p id="errorMessage" class="error-message">Something went wrong.</p>
+        <button class="reset-btn" id="errorResetBtn">Try again</button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>YtiDown &mdash; For personal use only. Please respect copyright and platform terms of service.</p>
+    </footer>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
